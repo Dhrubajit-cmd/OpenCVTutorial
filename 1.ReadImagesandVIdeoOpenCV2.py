@@ -18,3 +18,15 @@ else :
 
 # Reading Videos in OpenCV
 
+video_path = "/home/dc/Videos/video.mp4"
+
+capture = cv.VideoCapture(video_path)  # Int  0(in place of path) : Refers Webcam , 1 : 1st Camera Connected to our system and so on..
+while True :
+    isTrue, frame = capture.read()
+    cv.imshow("Video", frame)
+
+    if cv.waitKey(20) & 0xFF==ord('q'):  # 0xFF==ord('q') -> Says that until 'q' key is pressed the video keeps on running.
+        break
+capture.release()
+cv.destroyAllWindows()
+
