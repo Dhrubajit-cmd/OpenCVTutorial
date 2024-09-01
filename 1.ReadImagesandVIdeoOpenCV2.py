@@ -8,10 +8,10 @@ if not os.path.isfile(img_path) :
 else :
     img = cv.imread(img_path)
     if img is None :
-       print(f"Error ")
-    cv.imshow("Day", img)
-
-    cv.waitKey(0)
-    cv.destroyAllWindows()
+       print(f"Error unable to read image {img}. \n ")
+    else :
+       cv.imshow("Day", img)
+       cv.waitKey(0)
+       cv.destroyAllWindows()
 
 
