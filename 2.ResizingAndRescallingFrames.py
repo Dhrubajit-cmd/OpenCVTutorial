@@ -34,4 +34,10 @@ def changeRes(width,height):
     capture.set(4,height)
 
 
+# We can use the code below to resize the image :
+img = cv.imread("/home/dc/Pictures/Wallpapers/evening.png")
+dimensions = (1920,1080)
+resize = cv.resize(img, dimensions) # cv.resize helps us resize the image .
+cv.imshow("Resized_Image", resize)
 
+cv.waitKey(0)
