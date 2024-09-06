@@ -6,7 +6,7 @@ import numpy as np
 blank = np.zeros((500,500,3), dtype = "uint8") # The three digits mean the (height,width,color channel))
 cv.imshow("Blank", blank)
 img = cv.imread("/home/dc/Pictures/Wallpapers/evening.png")
-blank[200:300,300:400] = 0,0,255 # [:] Basically gives us a range of pixels.
+blank[200:300,300:400] = 0,0,255 # [:] Basically gives us a range of pixels. And the other part gives us the color.
 cv.imshow('Green', blank)
 
 # Draw a rectangle :
