@@ -29,3 +29,7 @@ cv.putText(blank, "Hello", (255,255), cv.FONT_HERSHEY_PLAIN, 1.0, (255,0,0), 2 )
 cv.imshow("TEXT", blank)
 cv.waitKey(0)
 cv.destroyAllWindows()
+
+
+# SATURDAY AUR SUNDAY INN DO DIN MEIN KHATAM KARNI HI HAIN !!
+
