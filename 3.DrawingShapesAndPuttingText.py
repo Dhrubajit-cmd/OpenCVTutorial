@@ -31,5 +31,5 @@ cv.waitKey(0)
 cv.destroyAllWindows()
 
 
-# SATURDAY AUR SUNDAY INN DO DIN MEIN KHATAM KARNI HI HAIN !!
+
 
