@@ -29,11 +29,34 @@ cv.imshow('Canny Images', canny_resized)
 
 
 # How to Dilate an image using a specific structuring element :
-dilated = cv.dilate(grey_resized, (5,5), iterations = 1) # I even don't know what do the iterations do here.
+dilated = cv.dilate(canny_resized, (5,5), iterations = 1) # I even don't know what do the iterations do here : In the cv2.dilate method from OpenCV, the iterations parameter controls how many times the dilation operation is applied to the image.
 dilated_resized = cv.resize(dilated, dimensions )
 cv.imshow("Dilated Images", dilated_resized)
 
 # Questions :- What is the difference between normal and dilated image . [Why is the difference not easily visible.]
+# Answer : Dilated Image have some properties different than the normal image, we can dilate an image using cv2.dilate(img,ksize,iterations) method in Python.
+#  Some of it's properties are :
+# Bridging Graphs : Dilation can connect nearby objects or fill in small gaps with objects, effectively merging them together. This is used for tasks like joining broken lines or characters in
+# text recognition.
+# Smoothing Edges : Sharp corners and edges in the original image tend to become smoother and omore rounded after dilation.
+# Reduced Noise : Small, isolated noise pixels can be rmeoved or reduced through dilation, as they get merged with  larger foreground objects.
+
+# Eroding  : (it erodes the dilated image to get back the structural part.)
+eroded = cv.erode(dilated_resized,(3,3), iterations = 3)
+eroded_resized = cv.resize(eroded, dimensions)
+cv.imshow("Eroded", eroded_resized)
+
+# Resize Function :
+resized = cv.resize(img, (500,500), interpolation = cv.INTER_AREA) # If making smaller.
+cv.imshow("Simple Show",resized)
+# If made bigger, cv.INTER_CUBIC {Slower but better} or cv.INTER_LINEAR can work better.
+
+# Cropping :
+cropped = img[50:200, 200:400]
+            # the_image_to_crop[row_range,column_range]
+cv.imshow("Cropped",cropped)
 
 cv.waitKey(0)
 cv.destroyAllWindows()
+
+
