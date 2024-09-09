@@ -29,11 +29,11 @@ cv.imshow('Canny Images', canny_resized)
 
 
 # How to Dilate an image using a specific structuring element :
-dilated = cv.dilate(canny, (7,7), iterations = 1)
+dilated = cv.dilate(grey_resized, (5,5), iterations = 1) # I even don't know what do the iterations do here.
 dilated_resized = cv.resize(dilated, dimensions )
 cv.imshow("Dilated Images", dilated_resized)
 
-
+# Questions :- What is the difference between normal and dilated image . [Why is the difference not easily visible.]
 
 cv.waitKey(0)
 cv.destroyAllWindows()
